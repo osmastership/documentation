@@ -1,6 +1,6 @@
 # This file is automatically added by @npmcli/template-oss. Do not edit.
 
-# ignore everything in the root
+# file everything in the root
 /*
 
 !**/.gitignore
