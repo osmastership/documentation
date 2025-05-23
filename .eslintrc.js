@@ -1,23 +1,29 @@
-const {getGlobals} = require('eslint-plugin-mdx/lib/helpers')
+const {getGlobals} = require('eslint-plugin-mdx')
 
 module.exports = {
   root: true,
   ignorePatterns: ['.cache/', 'public/'],
+  plugins: ['primer-react'], // github plugin now comes from flat config
   extends: [
     '@npmcli',
     'react-app',
-    // 'react-app/jest',
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:github/react',
-    'plugin:primer-react/recommended',
+    // 'plugin:github/react',  // REMOVED: now handled by flat config
     'plugin:react-hooks/recommended',
     'prettier',
   ],
   rules: {
     'max-len': 'off',
     'react/prop-types': 'off',
+    'primer-react/direct-slot-children': 'error',
     'primer-react/no-system-props': ['error', {includeUtilityComponents: true}],
+    'primer-react/a11y-tooltip-interactive-trigger': 'error',
+    'primer-react/new-color-css-vars': 'error',
+    'primer-react/a11y-explicit-heading': 'error',
+    'primer-react/no-deprecated-props': 'warn',
+    'primer-react/a11y-remove-disable-tooltip': 'error',
+    'primer-react/a11y-use-accessible-tooltip': 'error',
   },
   settings: {
     'import/resolver': {

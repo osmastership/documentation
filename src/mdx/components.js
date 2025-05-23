@@ -1,5 +1,6 @@
 import React from 'react'
-import {Box, Heading, themeGet, Octicon} from '@primer/react'
+import {Box, Heading, themeGet} from '@primer/react'
+import {Octicon} from '@primer/react/deprecated'
 import styled from 'styled-components'
 import {variant as styledVariant} from 'styled-system'
 import {LinkIcon} from '@primer/octicons-react'
@@ -124,10 +125,10 @@ const Headings = {
 
 export const H1 = Headings.wrap('h1')
 export const H2 = Headings.wrap('h2')
-export const H3 = Headings.wrap('h3')
-export const H4 = Headings.wrap('h4')
-export const H5 = Headings.wrap('h5')
-export const H6 = Headings.wrap('h6')
+export const H3 = Headings.wrap('h2')
+export const H4 = Headings.wrap('h3')
+export const H5 = Headings.wrap('h4')
+export const H6 = Headings.wrap('h5')
 
 export const Blockquote = styled.blockquote`
   margin: 0 0 ${themeGet('space.3')};
@@ -179,7 +180,7 @@ export const UnorderedList = styled.ul`
   }
 
   li {
-    word-wrap: break-all;
+    word-break: break-word;
   }
 
   li > p {
@@ -195,6 +196,7 @@ export const OrderedList = UnorderedList.withComponent('ol')
 
 export const Paragraph = styled.p`
   margin: 0 0 ${themeGet('space.3')};
+  word-break: break-word;
 `
 
 export const Table = styled.table`
